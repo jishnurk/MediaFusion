@@ -22,13 +22,19 @@ async def filter_and_sort_streams(
     # Convert to sets for faster lookups
     selected_catalogs_set = set(user_data.selected_catalogs)
     selected_resolutions_set = set(user_data.selected_resolutions)
+    cam_streams_allowed = "CAM/TS" in selected_resolutions_set
 
-    # Step 1: Filter streams by selected catalogs, resolutions, and size
+    # Step 1: Filter streams by selected catalogs, resolutions/quality and size
     filtered_streams = [
         stream
         for stream in streams
         if any(catalog_id in selected_catalogs_set for catalog_id in stream.catalog)
         and stream.resolution in selected_resolutions_set
+        and (   
+                (stream.quality is None) or
+                (re.search(r"telesync|ts|cam|screener", stream.quality.lower()) is None) or
+                (re.search(r"telesync|ts|cam|screener", stream.quality.lower()) is not None and cam_streams_allowed)
+            )
         and stream.size <= user_data.max_size
     ]
 

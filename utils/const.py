@@ -94,6 +94,7 @@ RESOLUTIONS = [
     "480p",
     "360p",
     "240p",
+    "CAM/TS",
     None,
 ]
 

@@ -240,10 +240,10 @@
                     </h4>
                     <hr class="section-divider">
 
-                    <!-- Select Streaming Resolutions -->
+                    <!-- Select Streaming Resolutions/Quality -->
                     <div class="mb-3">
-                        <h6>Select Streaming Resolutions: <span class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Select the streaming resolutions that you prefer. The addon will filter these when fetching streams."></span></h6>
+                        <h6>Select Streaming Resolutions/Quality: <span class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Select the streaming resolutions or quality that you prefer. The addon will filter these when fetching streams."></span></h6>
                         <div class="row">
                             {% for resolution in resolutions %}
                             <div class="col-12 col-md-6 col-lg-4">
@@ -296,11 +296,11 @@
 
                     </div>
 
-                    <!-- Maximum Streams Result per Resolution Configuration -->
+                    <!-- Maximum Streams Result per Resolution/Quality Configuration -->
                     <div class="mb-3">
-                        <label for="maxStreamsPerResolution">Max Streams Per Resolution: <span class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                                               title="Enter the maximum number of streams per resolution to display in Stremio."></span></label>
-                        <input type="number" class="form-control" id="maxStreamsPerResolution" name="maxStreamsPerResolution" min="1" placeholder="Enter maximum streams per resolution"
+                        <label for="maxStreamsPerResolution">Max Streams Per Resolution/Quality: <span class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                                               title="Enter the maximum number of streams per resolution/quality to display in Stremio."></span></label>
+                        <input type="number" class="form-control" id="maxStreamsPerResolution" name="maxStreamsPerResolution" min="1" placeholder="Enter maximum streams per resolution/quality"
                                value="{{ user_data.max_streams_per_resolution }}">
                         <div class="invalid-feedback">
                             Please enter a valid number.
